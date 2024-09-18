@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@fontFamily : 'Hanken Grotesk', sans-serif;
+
+.font( @fontWeight: 400 ) {
+  font-family: @fontFamily;
+  font-weight: @fontWeight;
+}
+
+.fontInter( @fontWeight: 500 ) {
+  font-family: 'Inter', sans-serif;
+  font-weight: @fontWeight;
+}
+
+.fontSize( @size, @lineHeight ) {
+  font-size: @size;
+  line-height: @lineHeight;
+}

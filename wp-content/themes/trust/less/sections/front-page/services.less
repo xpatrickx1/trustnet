@@ -1,0 +1,155 @@
+.services {
+  position: relative;
+  padding: clamp(60px, 13vw, 120px) 0 80px;
+  background: @background[second];
+  background-repeat: no-repeat;
+  background-position: 0 70%;
+  background-size: contain;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: 1025px;
+    right: -20%;
+    top: 30%;
+    transform: translateX(-50%);
+    background: center/contain no-repeat radial-gradient(circle,rgba(0,191,251,.3) 0,rgba(133,224,253,.3) 67%,rgba(240,240,240,.3) 81%,rgba(240,240,240,.3) 100%);
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+     flex-wrap: wrap;
+     justify-content: center;
+    }
+  }
+
+  &__pretitle {
+    .fontInter(500);
+    .fontSize(24px, 39px);
+    color: @color[accent];
+  }
+
+  h2 {
+    .fontInter(400);
+    .fontSize(clamp(20px, 5vw, 48px), clamp(25px, 5vw, 60px));
+    color: @color[black];
+    margin: 14px 0 58px;
+
+    span {
+      display: block;
+      .fontInter(700);
+    }
+  }
+
+  &__groups {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(15px, 5vw, 36px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .services__group {
+      display: flex;
+      align-items: flex-end;
+      gap: clamp(20px, 5vw, 63px);
+
+      &:first-child {
+        .service {
+          max-width: 186px;
+        }
+      }
+
+      &:nth-child(2), &:last-child {
+        .service {
+          max-width: 286px;
+        }
+      }
+    }
+
+    .item__wrap {
+      position: relative;
+      max-width: 320px;
+    }
+
+    .item__title {
+      .fontInter(600);
+      .fontSize(clamp(20px, 5vw, 28px), clamp(25px, 5vw, 33px));
+      color: @color[black];
+    }
+
+    .item__text {
+      .fontInter(400);
+      .fontSize(16px, 29px);
+      color: @color[textSecond];
+      margin: 12px 0 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+
+    .service {
+      width: 100%;
+      flex: 1 0 auto;
+      max-width: 250px;
+        position: relative;
+        background: linear-gradient(to right, red, purple);
+        padding: 3px;
+
+      &:last-child {
+        background: none;
+        a {
+          color: @color[white];
+          background: transparent;
+          border: .88px solid linear-gradient(144.15deg, #00BFFB 44.83%, rgba(171, 0, 251, 0.4) 121%);
+        }
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      .fontInter(500);
+      .fontSize(18px, 26px);
+      color: @color[text];
+      background: @background[main];
+      border-radius: 12px;
+      border: .88px solid @background[main];
+      padding: clamp(10px, 5vw, 26px) clamp(10px, 5vw, 16px) clamp(10px, 5vw, 26px) clamp(10px, 5vw, 24px);
+
+      &:hover {
+        position: relative;
+        background: linear-gradient(144.15deg, #00BFFB 44.83%, rgba(171, 0, 251, 0.4) 121%);
+        border: 0.88px solid;
+      }
+
+      &::after {
+        content: '';
+        // position: absolute;
+        display: inline-block;
+        // bottom: 0;
+        // left: 0;
+        width: 18px;
+        height: 11px;
+        background-image: url("data:image/svg+xml,%3Csvg width='19' height='11' viewBox='0 0 19 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.9121 10.6715C12.0293 10.8215 12.2059 10.8996 12.3825 10.8996C12.5137 10.8996 12.645 10.8573 12.7544 10.7698L14.6481 9.27137L18.1841 6.11823C18.3122 6.00261 18.3857 5.83854 18.3841 5.6651C18.3825 5.49167 18.3075 5.3276 18.1763 5.2151L12.7074 0.490263C12.4574 0.274637 12.0777 0.301197 11.8605 0.552764C11.6449 0.804326 11.6715 1.18246 11.923 1.39965L16.1157 5.02197H1.17757C0.846315 5.02197 0.57756 5.29072 0.57756 5.62198C0.57756 5.95323 0.846315 6.22198 1.17757 6.22198H16.2646L13.8762 8.35271L12.0106 9.82928C11.7512 10.034 11.7059 10.4121 11.9121 10.6715Z' fill='black'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+  
+}

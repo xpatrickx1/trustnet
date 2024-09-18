@@ -1,0 +1,27 @@
+.clients {
+  position: relative;
+  padding: 66px 0 80px;
+  background: @background[clients];
+  text-align: center;
+
+  &__title {
+    .fontInter();
+    .fontSize(21px, 31px);
+    color: @color[textSecond];
+
+    span {
+      display: block;
+      .fontInter(700);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: clamp(30px, 5vw, 86px);
+    list-style: none;
+    max-height: 53px;
+    margin-top: clamp(20px, 5vw, 40px);
+  }
+  
+}

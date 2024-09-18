@@ -1,0 +1,145 @@
+h1 {
+  position: relative;
+  z-index: 1;
+  .font( 400 );
+  .fontSize( clamp(20px, 6vw, 56px), clamp(25px, 7vw, 72px) );
+  color: @color[ black ];
+  margin: 0 0 30px;
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    .fontSize( 28px, 33px );
+    margin: 0 0 20px;
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      z-index: -1;
+
+      @media ( max-width: @sizes[ maxSM ] ) {
+        bottom: 0;
+      }
+    }
+
+  }
+
+}
+
+h2 {
+  .font( 700 );
+  .fontSize( 28px, 36px );
+  margin: 0 0 25px;
+  //color: @//color[title];
+}
+
+h3, h4, h5, h6 {
+  .font( 700 );
+  //color: @//color[ title ];
+}
+
+div {
+
+  &.main__title{
+    .font( 700 );
+    .fontSize( 50px, 58px );
+    //color: @//color[ title ];
+    margin: 0 0 20px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      .fontSize( 38px, 45px );
+    }
+
+  }
+
+  &.second__title{
+    .font( 700 );
+    .fontSize( 50px, 58px );
+    //color: @//color[ titleSecond ];
+    margin: 0 0 20px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      .fontSize( 38px, 45px );
+    }
+
+  }
+
+}
+
+.section-title {
+  .font(700);
+  .fontSize(50px, 65px);
+  //color: @//color[ title ];
+  margin: 0 0 20px;
+
+  @media ( max-width: @sizes[ maxLG ] ) {
+    .fontSize(40px, 52px);
+  }
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    .fontSize(32px, 42px);
+  }
+}
+
+
+.section-subtitle {
+  .font( 400 );
+  .fontSize( 30px, 38px );
+  //color: @//color[ subTitle ];
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    .fontSize( 18px, 25px );
+  }
+
+}
+
+.section-description {
+  .font( 400 );
+  .fontSize( 18px, 25px );
+  //color: @//color[ text ];
+}
+
+
+
+.section__description {
+  .font( 400 );
+  .fontSize( 18px, 29px );
+  //color: @//color[ text ];
+  text-align: center;
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    .fontSize( 16px, 26px );
+  }
+
+}
+
+p, ul, ol {
+  margin: 0 0 20px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+a {
+  color: #7699F9;
+
+  @media ( min-width: @sizes[ minLG ] ) {
+    &:hover {
+      color: #3d7af8;
+    }
+  }
+  
+}

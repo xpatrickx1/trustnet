@@ -1,0 +1,22 @@
+{
+  "fileExtensions": [".less"],
+
+  "emptyRule": {"enabled": true, "severity": "error"},
+  "importantRule": {"enabled": true, "severity": "error"},
+  "duplicateProperty": {"enabled": true, "severity": "error"},
+  "singleLinePerProperty": {"allowSingleLineRules": true, "severity": "error"},
+  "spaceBeforeBrace": false,
+  "zeroUnit": false,
+  "propertyOrdering": false,
+  "spaceAroundComma":false,
+  "singleLinePerSelector": false,
+  "hexLength": false,
+  "hexNotation": false,
+  "decimalZero": false,
+  "universalSelector": false,
+  "idSelector": false,
+  "finalNewline": false,
+  "maxCharPerLine": false,
+  "stringQuotes": false,
+  "qualifyingElement": false
+}

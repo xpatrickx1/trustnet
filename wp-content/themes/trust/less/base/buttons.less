@@ -1,0 +1,77 @@
+.buttonMain( @width: 270px ) {
+  position: relative;
+  outline: none;
+  .font(500);
+  .fontSize(22px, 29px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: @width;
+  width: 100%;
+  padding: 20px 33px;
+  transition: @transition;
+  border-radius: @border[ buttonRadius ];
+  background: @backgroundButton[ mainButton ];
+  color: @colorButton[ mainButton ];
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover {
+    @media ( min-width: @sizes[ minLG ] ) {
+      background: @backgroundButton[ mainButtonHover ];
+      color: @colorButton[ mainButtonHover ];
+      box-shadow: @shadow[ mainButtonHover ];
+    }
+  }
+
+  &:active {
+    background: @backgroundButton[ mainButtonActive ];
+    color: @colorButton[ mainButtonActive ];
+    box-shadow: none;
+  }
+}
+
+.buttonSecond( @width: 220px ) {
+  position: relative;
+  outline: none;
+  .font(500);
+  .fontSize(16px, 21px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: @width;
+  width: 100%;
+  padding: 13px 20px;
+  transition: @transition;
+  border-radius: @border[ buttonRadius ];
+  background: @backgroundButton[secondButton];
+  border: 1.4px solid @backgroundButton[ mainButton ];
+  color: @colorButton[ secondButton ];
+  box-shadow: none;
+  cursor: pointer;
+
+  &:hover {
+    @media ( min-width: @sizes[ minLG ] ) {
+      background: @backgroundButton[ secondButtonHover ];
+      border: 2px solid @backgroundButton[ secondButtonHover ];
+      color: @colorButton[ secondButtonHover ];
+      box-shadow: @shadow[ secondButtonHover ];
+    }
+  }
+
+  &:active {
+    background: @backgroundButton[ secondButtonActive ];
+    color: @colorButton[ secondButtonActive ];
+    box-shadow: none;
+  }
+}
+
+.button {
+  &--main {
+    .buttonMain();
+  }
+
+  &--second {
+    .buttonSecond();
+  }
+}

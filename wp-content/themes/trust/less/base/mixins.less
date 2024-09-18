@@ -1,0 +1,101 @@
+.itemTitle( @fontWeight: 700; @fontSize: 28px; @lineHeight: 36px; @color: @color[ accent ] ) {
+  font-family: @fontFamily;
+  font-weight: @fontWeight;
+  font-size: @fontSize;
+  line-height: @lineHeight;
+  color: @color;
+}
+
+.generateOrder(@n, @i: 1) when (@i =< @n) {
+  .order-@{i} {
+    order: @i;
+  }
+  .generateOrder(@n, (@i + 1));
+}
+
+.animatePreloader( @width:200px ) {
+  position: relative;
+  overflow: hidden;
+
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: @width;
+    animation: loading 2s infinite;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.18) 10%,rgba(255,255,255,0.8) 45%,rgba(255,255,255,0.8) 55%,rgba(255,255,255,0.18) 90%,rgba(255,255,255,0) 100%);
+    background-size: 200% 100%;
+    z-index: 1000;
+  }
+}
+
+.text {
+
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
+}
+
+.hidden {
+
+  &--mobile {
+    @media ( max-width: @sizes[ maxSM ] ) {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    @media ( min-width: @sizes[ minMD ] ) {
+      display: none;
+    }
+  }
+
+}
+
+.visible {
+
+  &--mobile {
+    @media ( max-width: @sizes[ maxSM ] ) {
+      display: block;
+    }
+  }
+
+  &--tablet {
+    @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
+      display: block;
+    }
+  }
+
+  &--desktop {
+    @media ( min-width: @sizes[ minMD ] ) {
+      display: block;
+    }
+  }
+
+}
