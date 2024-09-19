@@ -1,0 +1,129 @@
+.frameworks {
+  position: relative;
+  padding: clamp(60px, 13vw, 120px) 0 80px;
+  background: @background[second];
+  background-repeat: no-repeat;
+  background-position: 0 70%;
+  background-size: contain;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+     flex-wrap: wrap;
+     justify-content: center;
+    }
+  }
+
+  &__pretitle {
+    .fontInter(500);
+    .fontSize(24px, 39px);
+    color: @color[accent];
+  }
+
+  h2 {
+    .fontInter(400);
+    .fontSize(clamp(20px, 5vw, 48px), clamp(25px, 5vw, 60px));
+    color: @color[black];
+    margin: 14px 0 58px;
+    max-width: 780px;
+
+    span {
+      display: block;
+      .fontInter(700);
+    }
+  }
+
+  .item__img {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -50px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: @color[white];
+    box-shadow: 0px 0px 0px 12px #0091E22B;
+  }
+
+  .item__title {
+    .fontInter(500);
+    .fontSize(clamp(20px, 5vw, 31px), clamp(25px, 5vw, 37px));
+    color: @color[accent];
+    text-align: center;
+  }
+
+  .item__text {
+    flex: 1 0 auto;
+    .fontInter(400);
+    .fontSize(16px, 29px);
+    color: @color[textSecond];
+    margin: 14px 0 0;
+    text-align: center;
+    max-width: 282px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    height: fit-content;
+    gap: clamp(10px, 5vw, 24px);
+    margin: clamp(60px, 7vw, 116px) 0 0;
+    padding: 0;
+
+    .item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      flex: 1 0 auto;
+      max-width: 378px;
+      background: @background[white];
+      border-radius: @border[mainRadius];
+      padding: clamp(30px, 12vw, 98px) clamp(10px, 2vw, 25px) clamp(10px, 5vw, 24px);
+      box-shadow: 0px 0px 14px 0px #00000008;
+    }
+
+    a {
+      align-self: flex-end;
+      height: 46px;
+      width: 46px;
+      border-radius: 50%;
+      border: 1px solid @color[black];
+      transition: @transition;
+      background-image: url("data:image/svg+xml,%3Csvg width='19' height='11' viewBox='0 0 19 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.9121 10.6715C12.0293 10.8215 12.2059 10.8996 12.3825 10.8996C12.5137 10.8996 12.645 10.8573 12.7544 10.7698L14.6481 9.27137L18.1841 6.11823C18.3122 6.00261 18.3857 5.83854 18.3841 5.6651C18.3825 5.49167 18.3075 5.3276 18.1763 5.2151L12.7074 0.490263C12.4574 0.274637 12.0777 0.301197 11.8605 0.552764C11.6449 0.804326 11.6715 1.18246 11.923 1.39965L16.1157 5.02197H1.17757C0.846315 5.02197 0.57756 5.29072 0.57756 5.62198C0.57756 5.95323 0.846315 6.22198 1.17757 6.22198H16.2646L13.8762 8.35271L12.0106 9.82928C11.7512 10.034 11.7059 10.4121 11.9121 10.6715Z' fill='black'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:hover {
+        border: 1px solid @background[accent];
+        color: @color[accent];
+      }
+    }
+  }
+
+  .button--second {
+    margin: clamp(20px, 3vw, 38px) 0 0 auto;
+    border-radius: 10px;
+    max-width: 378px;
+    padding: 25px 24px;
+    .fontInter(500);
+    .fontSize(clamp(12px, 5vw, 18px), clamp(20px, 5vw, 27px));
+    justify-content: space-between;
+
+    &:after {
+      content: '';
+      width: 20px;
+      height: 14px;
+      margin-left: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='15' viewBox='0 0 20 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.6683 0.93723C13.5452 0.789284 13.3648 0.70021 13.1724 0.69192C12.9799 0.682862 12.7927 0.755324 12.6561 0.891955C12.5202 1.02782 12.4477 1.21502 12.456 1.4075C12.4651 1.59998 12.5541 1.78038 12.7021 1.90342L17.6319 6.83918H1.33842C0.973094 6.85805 0.687012 7.15998 0.687012 7.52606C0.687012 7.89139 0.973094 8.19332 1.33842 8.21295H17.6319L12.6946 13.1419C12.4364 13.4122 12.4364 13.8379 12.6946 14.1081C12.8221 14.2364 12.9965 14.3089 13.1776 14.3089C13.3588 14.3089 13.5324 14.2364 13.6607 14.1081L19.7673 8.00155L19.7665 8.00231C19.8979 7.8755 19.9726 7.70113 19.9726 7.51922C19.9726 7.33656 19.8979 7.16219 19.7665 7.03614L13.6683 0.93723Z' fill='black'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  
+}

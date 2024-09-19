@@ -1,15 +1,5 @@
 <?php include( 'services-data.php' ) ?>
 
-<?php
-    if (have_rows('services_group')):
-      $services = [];
-      while ( have_rows('services_group')) : the_row();
-          $services[get_row_index() - 1]['title'] = get_sub_field('service_group_title');
-          $services[get_row_index() - 1]['text'] = get_sub_field('service_group_subtitle');
-      endwhile;
-    endif;
-?>
-
 <section class="services">
   <div class="container">
 
@@ -24,32 +14,46 @@
 
     <div class="services__wrap">
 
-    
-
       <ul class="services__groups">
         <?php if (have_rows('services_group')) :
           while ( have_rows('services_group')) : the_row(); ?>
 
-            <li class="services__group">
-              <div class="item__wrap">
-                <div class="item__title"><?= get_sub_field('service_group_title') ?></div>
-                <div class="item__text"><?= get_sub_field('service_group_subtitle') ?></div>
-              </div>
-              <ul class="services__list">
-              <?php if (have_rows('services_list')) :
-                while ( have_rows('services_list')) : the_row(); ?>
-                  <li class="service">
-                    <a href="<?= get_sub_field('item_link') ?>"><?= get_sub_field('item_title') ?></a>
-                  </li>
-                <?php endwhile; ?>
-              <?php endif; ?>
-              </ul>
-            </li>
+          <li class="services__group">
+            <div class="item__wrap">
+              <div class="item__title"><?= get_sub_field('service_group_title') ?></div>
+              <div class="item__text"><?= get_sub_field('service_group_subtitle') ?></div>
+            </div>
+            <ul class="services__list">
+            <?php if (have_rows('services_list')) :
+              while ( have_rows('services_list')) : the_row(); ?>
+                <li class="service">
+                  <a href="<?= get_sub_field('item_link') ?>">
 
-          <?php endwhile; ?>
+                    <?php if(get_sub_field('item_img')['url']) : ?>
+                      <div class="item__wrap">
+                        <img 
+                          src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                          data-src="<?= get_sub_field('item_img')['url'] ?>"
+                          class="lazy"
+                          width="1px"
+                          height="1px"
+                        />
+                        
+                        <?= get_sub_field('item_title') ?>
+                      </div>
+                    <?php else : ?>
+                      <?= get_sub_field('item_title') ?>
+                    <?php endif; ?>
+                  </a>
+                </li>
+              <?php endwhile; ?>
+            <?php endif; ?>
+            </ul>
+          </li>
 
-        <?php else : ?>
+        <?php endwhile; ?>
 
+      <?php else : ?>
           <?php foreach ( $services as $key => $item ) : ?>
             <li class="services__group">
               <div class="item__wrap">
@@ -58,9 +62,25 @@
               </div>
               <ul class="services__list">
                 <?php foreach ( $item as $listItem ) : ?>
-                  <?php foreach ( $listItem as $service ) : ?>
+                  <?php foreach ( $listItem as $num => $service ) : ?>
                     <li class="service">
-                      <a href="<?= $service['item-link'] ?>"><?= $service['item-title'] ?></a>
+                      <a href="<?= $service['item-link'] ?>">
+                        <?php if($key == 2 && ($num + 1) !== count($listItem)) : ?>
+                          <div class="item__wrap">
+                            <img 
+                              src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                              data-src="<?= bloginfo('template_url') . '/images/page-front/services/service' . ($num + 1) . '.png' ?>"
+                              class="lazy"
+                              width="1px"
+                              height="1px"
+                            />
+                            
+                            <?= $service['item-title'] ?>
+                          </div>
+                        <?php else : ?>
+                          <?= $service['item-title'] ?>
+                        <?php endif; ?>
+                      </a>
                     </li>
                   <?php endforeach; ?>
                 <?php endforeach; ?>
@@ -74,3 +94,5 @@
     </div>
   </div>
 </section>
+
+
