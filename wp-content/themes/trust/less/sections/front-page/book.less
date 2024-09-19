@@ -1,0 +1,124 @@
+.book {
+  position: relative;
+  background: linear-gradient(134.04deg, #0091E2 30.5%, #007FF4 83.61%);
+
+  &--left {
+    max-width: 558px;
+    margin: clamp(30px, 7vw, 80px) 0 clamp(30px, 7vw, 95px) clamp(20px, 10vw, 134px);
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+     flex-wrap: wrap;
+     justify-content: center;
+    }
+  }
+
+  h3 {
+    .fontInter(400);
+    .fontSize(clamp(20px, 5vw, 48px), clamp(25px, 5vw, 58px));
+    color: @color[white];
+    margin: 14px 0 clamp(20px, 5vw, 48px);
+  }
+
+  &--right {
+    position: relative;
+    max-width: 770px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(15px, 5vw, 24px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 780px;
+
+    li {
+      position: relative;
+      color: #0473B1;
+      padding-left: 36px;
+      .fontInter(400);
+      .fontSize(21px, 25px);
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        left: 0;
+        margin-right: 12px;
+        display: inline-block;
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1393 22.14C14.0568 22.14 16.8542 20.9812 18.9177 18.9187C20.9802 16.8553 22.139 14.0577 22.139 11.1403C22.139 8.22287 20.9803 5.42543 18.9177 3.36191C16.8543 1.29939 14.0568 0.140625 11.1393 0.140625C8.22189 0.140625 5.42445 1.29937 3.36093 3.36191C1.29842 5.42535 0.139648 8.22287 0.139648 11.1403C0.139648 14.0577 1.29839 16.8552 3.36093 18.9187C5.42438 20.9812 8.22189 22.14 11.1393 22.14ZM5.42901 11.43C5.81901 11.0428 6.44901 11.0428 6.83901 11.43L9.13963 13.7306L14.9296 7.9406C15.3262 7.60028 15.9178 7.62373 16.2871 7.9931C16.6565 8.36249 16.679 8.9531 16.3396 9.35059L9.83993 15.8503H9.839C9.449 16.2384 8.819 16.2384 8.429 15.8503L5.429 12.8503C5.23962 12.6628 5.13367 12.4068 5.13367 12.1406C5.13367 11.8734 5.23963 11.6184 5.42901 11.43Z' fill='%230091E2'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  .button--second {
+    justify-content: space-between;
+    color: #48BEFF;
+    .fontInter(500);
+    .fontSize(21px, 26px);
+    padding: 21px 20px;
+    box-shadow: 0px 0px 3px 0px #00000073;
+    border: 1px solid #42BBFF;
+    background: linear-gradient(277.53deg, rgba(19, 134, 170, 0.91) -99.93%, #0091E2 86.92%);
+    width: 100%;
+    max-width: 100%;
+    margin: clamp(20px, 5vw, 48px) 0 0;
+
+    &:after {
+      content: '';
+      width: 20px;
+      height: 14px;
+      margin-left: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg width='28' height='17' viewBox='0 0 28 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24.8629 9.47482L1.41116 9.47482C0.914285 9.47482 0.511154 9.07169 0.511154 8.57481C0.511154 8.07793 0.914285 7.6748 1.41116 7.6748L24.8629 7.6748C25.3598 7.6748 25.763 8.07793 25.763 8.57481C25.763 9.07169 25.3622 9.47482 24.8629 9.47482Z' fill='%232F9CEC'/%3E%3Cpath d='M18.2185 16.4915C17.9536 16.4915 17.6888 16.3743 17.513 16.1493C17.2036 15.7603 17.2716 15.193 17.6607 14.886L20.4592 12.6711L24.9568 8.65862L17.5294 2.24156C17.152 1.91578 17.1122 1.34858 17.4356 0.971235C17.7614 0.593886 18.331 0.554046 18.706 0.877484L26.9092 7.96474C27.1061 8.13349 27.2186 8.37959 27.221 8.63975C27.2233 8.8999 27.1131 9.146 26.9209 9.31943L21.617 14.0492L18.7764 16.2968C18.6123 16.4281 18.4154 16.4915 18.2185 16.4915Z' fill='%232F9CEC'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__resources {
+    color: @color[white];
+    .fontInter(400);
+    .fontSize(18px, 29px);
+    margin: clamp(20px, 5vw, 40px) 0 0;
+    max-width: 470px;
+
+    span {
+      color: @color[white];
+      .fontInter(600);
+    }
+
+    a {
+      color: #9BE7FF;
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    margin: 0 0 -6px;
+  }
+
+  &__author {
+    position: absolute;
+    color: @color[white];
+    .fontInter(400);
+    .fontSize(24px, 34px);
+    text-align: right;
+    right: calc((100vw - 1583px) / 2);
+    bottom: clamp(50px, 7vw, 90px);
+
+    &--name {
+      .fontInter(700);
+    }
+  }
+  
+}
