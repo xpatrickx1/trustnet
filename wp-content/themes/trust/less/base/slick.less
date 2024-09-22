@@ -1,0 +1,113 @@
+.arrow {
+
+  &--main {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 80px;
+    height: 80px;
+    appearance: none;
+    border-radius: 11px;
+    border: 1px solid #EAEAEA;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3385 0.592747C13.2155 0.444802 13.0351 0.355727 12.8426 0.347438C12.6501 0.33838 12.4629 0.410841 12.3263 0.547473C12.1904 0.683341 12.118 0.870539 12.1263 1.06302C12.1353 1.2555 12.2244 1.4359 12.3723 1.55893L17.3021 6.49469H1.00865C0.643321 6.51356 0.357239 6.8155 0.357239 7.18158C0.357239 7.54691 0.643321 7.84883 1.00865 7.86847H17.3021L12.3648 12.7975C12.1066 13.0677 12.1066 13.4934 12.3648 13.7636C12.4923 13.8919 12.6667 13.9644 12.8479 13.9644C13.029 13.9644 13.2026 13.892 13.3309 13.7636L19.4375 7.65707L19.4368 7.65782C19.5681 7.53101 19.6428 7.35665 19.6428 7.17474C19.6428 6.99208 19.5681 6.8177 19.4368 6.69166L13.3385 0.592747Z' fill='black'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: @background[white];
+    transition: @transition;
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      &:hover {
+        border: 1px solid @background[accent];
+      }
+    }
+
+    &:active {
+      border: 1px solid @background[accent];
+    }
+
+  }
+
+  &--line {
+    cursor: pointer;
+    position: absolute;
+    top: -90px;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.1473 9.25527C28.8293 9.59535 28.8293 10.1473 29.1473 10.4872L37.2211 19.1287H0.813999C0.364536 19.1287 0 19.5188 0 19.9999C0 20.481 0.364536 20.8712 0.813999 20.8712H37.2209L29.1471 29.5128C28.8293 29.8528 28.8292 30.4046 29.1472 30.7448C29.4651 31.0851 29.9805 31.0851 30.2984 30.7446L39.7616 20.6159C39.9205 20.4458 40 20.2228 40 19.9999C40 19.777 39.9205 19.554 39.7615 19.384L30.2983 9.25527C29.9805 8.91491 29.4651 8.91491 29.1473 9.25527Z' fill='%232AB0AB'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: @transition;
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      &:hover {
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.1473 9.25527C28.8293 9.59535 28.8293 10.1473 29.1473 10.4872L37.2211 19.1287H0.813999C0.364536 19.1287 0 19.5188 0 19.9999C0 20.481 0.364536 20.8712 0.813999 20.8712H37.2209L29.1471 29.5128C28.8293 29.8528 28.8292 30.4046 29.1472 30.7448C29.4651 31.0851 29.9805 31.0851 30.2984 30.7446L39.7616 20.6159C39.9205 20.4458 40 20.2228 40 19.9999C40 19.777 39.9205 19.554 39.7615 19.384L30.2983 9.25527C29.9805 8.91491 29.4651 8.91491 29.1473 9.25527Z' fill='%230BD7BF'/%3E%3C/svg%3E%0A");
+      }
+    }
+
+    &:active {
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.1473 9.25527C28.8293 9.59535 28.8293 10.1473 29.1473 10.4872L37.2211 19.1287H0.813999C0.364536 19.1287 0 19.5188 0 19.9999C0 20.481 0.364536 20.8712 0.813999 20.8712H37.2209L29.1471 29.5128C28.8293 29.8528 28.8292 30.4046 29.1472 30.7448C29.4651 31.0851 29.9805 31.0851 30.2984 30.7446L39.7616 20.6159C39.9205 20.4458 40 20.2228 40 19.9999C40 19.777 39.9205 19.554 39.7615 19.384L30.2983 9.25527C29.9805 8.91491 29.4651 8.91491 29.1473 9.25527Z' fill='%232AB0AB'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+}
+
+.slick {
+
+  &-track {
+    padding-bottom: 80px;
+  }
+
+  &-next.arrow--main,
+  &-next.arrow--second {
+    left: calc( 5% + 80px );
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      left: unset;
+      right: calc( 50% - 80px );
+    }
+
+  }
+
+  &-prev.arrow--main,
+  &-prev.arrow--second {
+    left: 5%;
+    transform: scaleX( -1 );
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      left: calc( 50% - 80px );
+    }
+
+  }
+
+  &-prev.arrow--line {
+    transform: rotate( 180deg );
+    right: 70px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      right: calc( 50% - 50px );
+    }
+
+  }
+
+  &-next.arrow--line {
+    right: 10px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      right: calc( 50% + 10px );
+    }
+
+  }
+
+  &-arrow.slick-disabled {
+    cursor: not-allowed;
+    opacity: .45;
+    //background-color: @arrow[ bgInActive ];
+  }
+  
+}

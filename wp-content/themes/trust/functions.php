@@ -22,13 +22,11 @@ function ox_adding_scripts()
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', null, '3.5.1', true);
 
-        wp_enqueue_script('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', null, '1.8.1', true);
-
+      
         //общие для всего сайта стили и скрипты
 
         /*custom js*/
         wp_enqueue_script('main', get_template_directory_uri() . '/js/min/main.min.js', array('jquery'), time(), true);
-        wp_enqueue_script('jq', get_template_directory_uri() . '/js/min/jquery.min.js', array('jquery'), time(), true);
 
         /*custom css*/
         wp_enqueue_style('main', get_template_directory_uri() . '/css/style.min.css', array(), time());

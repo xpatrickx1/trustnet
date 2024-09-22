@@ -1,0 +1,56 @@
+.about {
+  position: relative;
+  padding: 66px 0 clamp(40px, 7vw, 80px);
+  background: @background[second];
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__pretitle {
+    .fontInter(500);
+    .fontSize(24px, 39px);
+    color: @color[accent];
+  }
+
+  h2 {
+    .fontInter(400);
+    .fontSize(clamp(20px, 5vw, 48px), clamp(25px, 5vw, 60px));
+    color: @color[black];
+    margin: 14px 0 58px;
+
+    span {
+      display: block;
+      .fontInter(700);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: clamp(30px, 5vw, 86px);
+    list-style: none;
+    margin-top: clamp(20px, 5vw, 55px);
+    padding: 0;
+
+    .item__title {
+      .fontInter(400);
+      .fontSize(clamp(20px, 10vw, 115px), clamp(25px, 10vw, 137px));
+      color: @color[black];
+    }
+
+    .item__text {
+      flex: 1 0 auto;
+      .fontInter(400);
+      .fontSize(24px, 29px);
+      color: @color[textSecond];
+      max-width: 282px;
+
+      span {
+        display: block;
+      }
+    }
+  }
+}
+

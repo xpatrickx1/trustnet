@@ -1,0 +1,74 @@
+.phrase {
+  position: relative;
+  padding: clamp(16px, 13vw, 200px) clamp(16px, 13vw, 200px) clamp(16px, 5vw, 60px);
+  background-color: @background[second];
+  text-align: left;
+  overflow: hidden;
+  background-image: radial-gradient(circle,rgba(0,191,251,.3) 0,rgba(133,224,253,.3) 67%,rgba(240,240,240,.3) 81%,#F0F0F0 90%,#F0F0F0 100%);
+  background-size: 700px;
+  background-repeat: no-repeat;
+  background-position:  right -350px;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    height: 1400px;
+    width: 1400px;
+    right: -50%;
+    top: -50%;
+    // background: center/700px no-repeat radial-gradient(circle,rgba(0,191,251,.3) 0,rgba(133,224,253,.3) 67%,rgba(240,240,240,.3) 81%,#F0F0F0 90%,#F0F0F0 100%);
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 870px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 163px;
+      height: 160px;
+      background-image: url("data:image/svg+xml,%3Csvg width='132' height='102' viewBox='0 0 132 102' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.0829753 101.691V72.8257C0.0829753 64.5245 1.63944 55.8932 4.75236 46.9318C7.95961 37.876 12.2988 29.3391 17.77 21.3209C23.3356 13.2085 29.5614 6.36947 36.4476 0.803932L60.219 16.227C54.6535 24.6225 49.9841 33.3953 46.2108 42.5454C42.5319 51.6012 40.7396 61.6003 40.834 72.5426V101.691H0.0829753ZM71.8217 101.691V72.8257C71.8217 64.5245 73.3781 55.8932 76.4911 46.9318C79.6983 37.876 84.0375 29.3391 89.5087 21.3209C95.0743 13.2085 101.3 6.36947 108.186 0.803932L131.958 16.227C126.392 24.6225 121.723 33.3953 117.95 42.5454C114.271 51.6012 112.478 61.6003 112.573 72.5426V101.691H71.8217Z' fill='%2300BFFB'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center;
+      left: -102px;
+      top: -75px;
+      z-index: 0;
+    }
+  }
+
+  &__info {
+    .fontInter(500);
+    .fontSize(18px, 39px);
+    color: @color[accent];
+    margin: 7px 0 0;
+    align-self: end;
+  }
+
+  &__text {
+    position: relative;
+    .fontInter(400);
+    .fontSize(clamp(20px, 5vw, 36px), clamp(30px, 5vw, 55px));
+    color: @color[black];
+    max-width: 840px;
+
+    
+
+    span {
+      display: block;
+      .fontInter(700);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: clamp(30px, 5vw, 86px);
+    list-style: none;
+    max-height: 53px;
+    margin-top: clamp(20px, 5vw, 40px);
+  }
+  
+}
