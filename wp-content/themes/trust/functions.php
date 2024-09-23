@@ -434,7 +434,23 @@ function lazyloadmyframes(){
 	for (var i = 0; i < ytv.length; i++) {
 		ytv[i].src = ytv[i].getAttribute('data-src');
 	}
-}
+};
+
+function estimated_reading_time()
+{
+    $post = get_post();
+    $postcnt = strip_tags($post->post_content);
+    $words = count(preg_split('/\s+/', $postcnt));
+    $minutes = floor($words / 120);
+    $seconds = floor($words % 120 / (120 / 60));
+    if (1 <= $minutes) {
+        $estimated_time = $minutes . ' min';   // . ($minutes == 1 ? '' : 's')
+    } else {
+        $estimated_time = $seconds . ' s';     // . ($seconds == 1 ? '' : 's')
+    }
+    return $estimated_time;
+};
+
 
 </script>
 <?php
@@ -445,9 +461,7 @@ function lazyloadmyframes(){
 }
 
     return $content.$jqueryappend;
-}
+};
 
 add_filter('the_content', 'iframelazy');
-
-
 
