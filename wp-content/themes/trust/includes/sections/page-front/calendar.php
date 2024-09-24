@@ -1,59 +1,24 @@
-<section class="top-screen">
-  <div class="container top-screen__wrap">
+<section class="calendar">
+  <div class="container">
 
-    <div class="top-screen--left">
-      <h1>
-        <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-      </h1>
-
-      <div class="top-screen__buttons">
-        <a href="#" class="button--second">
-            Request an audit
-        </a>
-        <a href="#" class="button--main">
-          Book a call now
-        </a>
+    <div class="calendar__header">
+      <div class="calendar__pretitle">
+        <?= get_field( 'calendar_pretitle' ) ? the_field( 'calendar_pretitle' ) : 'Book a a free consultation with us' ?>
       </div>
+      <h2>
+        <?= get_field( 'calendar_title' ) ? the_field( 'calendar_title' ) : 'Start your efficient path to compliance now' ?>
+      </h2>
     </div>
-
-    <div class="top-screen--right">
-
-      <div class="top-screen__top">
-        <div class="top-screen__description">
-          <?= get_field('hp_description') ? the_field('hp_description') : 'Streamline SOC 2, PCI DSS, ISO 27001, 
-          and more with TrustNet’s Advisory, Automation, and Audit services, all under one roof.' ?>
-        </div>
-        <div class="top-screen__shield">
-          <img 
-            src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-            data-src="<?= bloginfo('template_url') . '/images/first-screen/shield.png' ?>"
-            class="lazy item__rating-img"
-            width="1px"
-            height="1px"
-          />
-          <div><?= get_field('hp_shield') ? the_field('hp_shield') : 'We offer a premium shield against evolving cyber threats.' ?></div>
-          
-        </div>
-      </div>
-
-      <ul class="top-screen__list">
-      <?php if (have_rows('hp_list')) :
-                while ( have_rows('hp_list')) : the_row(); ?>
-<li><a href="<?= the_sub_field('item_link') ?>"><?= the_sub_field('item_text') ?></a></li>
-<?php endwhile; ?>
-
-            <?php else : ?>
-
-        
-      
-        <li><a href="">SOC 2</a></li>
-        <li><a href="">PCI DSS</a></li>
-        <li><a href="">Penetration <span>Testing</span></a></li>
-        <li><a href="">GhostWatch <span>Managed Security</span></a></li>
+    <ul class="calendar__list">
+        <?php if (have_rows('calendar_list')) :
+          while ( have_rows('calendar_list')) : the_row(); ?>
+            <li class="item"><?= get_field( 'list_item' ); ?></li>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <li>30-minute session with practice leaders</li>
+          <li>Gain the knowledge, clarity, and customized solutions you need.</li>
+          <li>Leave confusion behind and navigate security with confidence.</li>
         <?php endif; ?>
       </ul>
-
-    </div>
-
   </div>
 </section>

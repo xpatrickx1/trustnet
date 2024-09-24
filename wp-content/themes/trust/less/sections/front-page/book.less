@@ -5,6 +5,10 @@
   &--left {
     max-width: 558px;
     margin: clamp(30px, 7vw, 80px) 0 clamp(30px, 7vw, 95px) clamp(20px, 10vw, 134px);
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      margin: clamp(30px, 7vw, 80px) 16px clamp(30px, 7vw, 95px);
+     }
   }
 
   &__wrap {
@@ -113,8 +117,12 @@
     .fontInter(400);
     .fontSize(24px, 34px);
     text-align: right;
-    right: calc((100vw - 1583px) / 2);
+    right: 16px;
     bottom: clamp(50px, 7vw, 90px);
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      right: calc((100vw - 1583px) / 2);
+     }
 
     &--name {
       .fontInter(700);

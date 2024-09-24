@@ -1,67 +1,64 @@
-.persone {
+.calendar {
   position: relative;
-  padding: 66px 0 clamp(40px, 7vw, 80px);
-  background: @background[second];
-  text-align: center;
+  padding: clamp(40px, 13vw, 71px) 0 80px;
+  background: @background[dark];
+  background-repeat: no-repeat;
+  background-position: 0 70%;
+  background-size: contain;
 
   &__wrap {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    justify-content: space-between;
+    gap: 40px;
 
-  &__photo {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid @color[accent];
-    width: 124px;
-    height: 124px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 107px;
-      height: 107px;
-      border: 1px solid @color[white];
-      border-radius: 50%;
-    }
-
-    img {
-      border-radius: 50%;
-      width: 100px;
-      height: auto;
+    @media ( max-width: @sizes[ maxLG ] ) {
+     flex-wrap: wrap;
+     justify-content: center;
     }
   }
 
-  &__info {
+  &__pretitle {
     .fontInter(500);
-    .fontSize(18px, 39px);
+    .fontSize(24px, 39px);
     color: @color[accent];
-    margin: 12px 0 24px;
   }
 
-  &__text {
+  h2 {
     .fontInter(400);
-    .fontSize(clamp(20px, 5vw, 36px), clamp(30px, 5vw, 55px));
-    color: @color[black];
-    max-width: 840px;
-
-    span {
-      display: block;
-      .fontInter(700);
-    }
+    .fontSize(clamp(20px, 5vw, 48px), clamp(25px, 5vw, 60px));
+    color: @color[white];
+    margin: 14px 0 58px;
   }
 
   &__list {
     display: flex;
-    align-items: center;
-    gap: clamp(30px, 5vw, 86px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(15px, 5vw, 24px);
     list-style: none;
-    max-height: 53px;
-    margin-top: clamp(20px, 5vw, 40px);
+    margin: 0;
+    padding: 0;
+    max-width: 780px;
+
+    li {
+      position: relative;
+      color: @color[textSecond];
+      padding-left: 36px;
+      .fontInter(400);
+      .fontSize(21px, 25px);
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        left: 0;
+        margin-right: 12px;
+        display: inline-block;
+        background-image: url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1393 22.14C14.0568 22.14 16.8542 20.9812 18.9177 18.9187C20.9802 16.8553 22.139 14.0577 22.139 11.1403C22.139 8.22287 20.9803 5.42543 18.9177 3.36191C16.8543 1.29939 14.0568 0.140625 11.1393 0.140625C8.22189 0.140625 5.42445 1.29937 3.36093 3.36191C1.29842 5.42535 0.139648 8.22287 0.139648 11.1403C0.139648 14.0577 1.29839 16.8552 3.36093 18.9187C5.42438 20.9812 8.22189 22.14 11.1393 22.14ZM5.42901 11.43C5.81901 11.0428 6.44901 11.0428 6.83901 11.43L9.13963 13.7306L14.9296 7.9406C15.3262 7.60028 15.9178 7.62373 16.2871 7.9931C16.6565 8.36249 16.679 8.9531 16.3396 9.35059L9.83993 15.8503H9.839C9.449 16.2384 8.819 16.2384 8.429 15.8503L5.429 12.8503C5.23962 12.6628 5.13367 12.4068 5.13367 12.1406C5.13367 11.8734 5.23963 11.6184 5.42901 11.43Z' fill='%230091E2'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
   }
-  
 }

@@ -34,6 +34,10 @@
     margin-top: clamp(20px, 5vw, 55px);
     padding: 0;
 
+    @media ( max-width: @sizes[ maxLG ] ) {
+      flex-wrap: wrap;
+    }
+
     .item__title {
       .fontInter(400);
       .fontSize(clamp(20px, 10vw, 115px), clamp(25px, 10vw, 137px));

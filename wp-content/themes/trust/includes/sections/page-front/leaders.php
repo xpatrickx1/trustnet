@@ -1,59 +1,61 @@
-<section class="top-screen">
-  <div class="container top-screen__wrap">
+<?php include( 'leaders-data.php' ) ?>
 
-    <div class="top-screen--left">
-      <h1>
-        <?= get_field( 'page_title' ) ? the_field( 'page_title' ) : get_the_title() ?>
-      </h1>
+<section class="leaders">
+  <div class="container">
 
-      <div class="top-screen__buttons">
-        <a href="#" class="button--second">
-            Request an audit
-        </a>
-        <a href="#" class="button--main">
-          Book a call now
-        </a>
+    <div class="leaders__header">
+      <div class="leaders__pretitle">
+        <?= get_field( 'leaders_pretitle' ) ? the_field( 'leaders_pretitle' ) : 'Our Leadership' ?>
       </div>
+      <h2>
+        <?= get_field( 'leaders_title' ) ? the_field( 'leaders_title' ) : 'Committed to the success of every client' ?>
+      </h2>
     </div>
 
-    <div class="top-screen--right">
+    <ul class="leaders__list">
+      <?php if (have_rows('leaders_list')) :
+        while ( have_rows('leaders_list')) : the_row(); ?>
+          <li class="item">
+            <div class="item__img">
+              <?php if(get_sub_field('item_img')['url']) : ?>
+                <img 
+                  src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                  data-src="<?= get_sub_field('item_img')['url'] ?>"
+                  class="lazy"
+                  width="1px"
+                  height="1px"
+                />
+              <?php endif; ?>
+            </div>
+            <div class="item__title"><?= get_sub_field('item_title') ?></div>
+            <div class="item__text"><?= get_sub_field('item_text') ?></div>
+            <a href="<?= get_sub_field('item_link') ?>"></a>
+          </li>
+        <?php endwhile; ?>
+      <?php else : ?>
+        <?php foreach ( $leaders as $key => $item ) : ?>
+          <li class="item">
+            <div class="item__img">
+              <img 
+                src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
+                data-src="<?= bloginfo('template_url') . '/images/page-front/leaders/leaders' . ($key + 1) . '.png' ?>"
+                class="lazy"
+                width="1px"
+                height="1px"
+              />
+            </div>
+            <div class="item__bottom">
+              <div class="item__title"><?= $item['title'] ?></div>
+              <div class="item__text"><?= $item['text'] ?></div>
+              <a href="<?= $service['item-link'] ?>"></a>
+            </div>
+          </li>
+        <?php endforeach; ?>
 
-      <div class="top-screen__top">
-        <div class="top-screen__description">
-          <?= get_field('hp_description') ? the_field('hp_description') : 'Streamline SOC 2, PCI DSS, ISO 27001, 
-          and more with TrustNet’s Advisory, Automation, and Audit services, all under one roof.' ?>
-        </div>
-        <div class="top-screen__shield">
-          <img 
-            src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-            data-src="<?= bloginfo('template_url') . '/images/first-screen/shield.png' ?>"
-            class="lazy item__rating-img"
-            width="1px"
-            height="1px"
-          />
-          <div><?= get_field('hp_shield') ? the_field('hp_shield') : 'We offer a premium shield against evolving cyber threats.' ?></div>
-          
-        </div>
-      </div>
-
-      <ul class="top-screen__list">
-      <?php if (have_rows('hp_list')) :
-                while ( have_rows('hp_list')) : the_row(); ?>
-<li><a href="<?= the_sub_field('item_link') ?>"><?= the_sub_field('item_text') ?></a></li>
-<?php endwhile; ?>
-
-            <?php else : ?>
-
-        
+      <?php endif; ?>
+    </ul>
       
-        <li><a href="">SOC 2</a></li>
-        <li><a href="">PCI DSS</a></li>
-        <li><a href="">Penetration <span>Testing</span></a></li>
-        <li><a href="">GhostWatch <span>Managed Security</span></a></li>
-        <?php endif; ?>
-      </ul>
-
-    </div>
-
   </div>
 </section>
+
+

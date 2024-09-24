@@ -22,7 +22,9 @@
         class="button--second">
         <?= get_sub_field( 'frameworks_button_title' ) ? get_sub_field( 'frameworks_button_title' ) : 'Book free consultation with Mike' ?>
       </a>
-      <div class="book__resources"><span>Don’t have time for a call ?</span> Check out our <a href="">Resources Section</a> to find the answers.</div>
+      <div class="book__resources"><?= get_field( 'book_resources' ) ? the_field( 'book_resources' ) : '<span>Don’t have time for a call ?</span> Check out our 
+        <a href="#">Resources Section</a> to find the answers.' ?>
+      </div>
     </div>
 
     <div class="book--right">
@@ -38,7 +40,7 @@
           <?= get_field('book_author') ? the_field('book_author') : 'Mike Kerem' ?>
         </div>
         <div class="book__author--position">
-          <?= get_field('book_author') ? the_field('book_author') : 'Senior Auditor at TrustNet' ?>
+          <?= get_field('book_position') ? the_field('book_position') : 'Senior Auditor at TrustNet' ?>
         </div>
       </div>
     </div>

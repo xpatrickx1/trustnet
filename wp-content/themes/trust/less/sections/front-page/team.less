@@ -1,67 +1,72 @@
-.persone {
+.team {
   position: relative;
   padding: 66px 0 clamp(40px, 7vw, 80px);
   background: @background[second];
-  text-align: center;
+  
+  .container {
+    max-width: 1314px;
+  }
 
   &__wrap {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
-  &__photo {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid @color[accent];
-    width: 124px;
-    height: 124px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 107px;
-      height: 107px;
-      border: 1px solid @color[white];
-      border-radius: 50%;
-    }
-
-    img {
-      border-radius: 50%;
-      width: 100px;
-      height: auto;
-    }
-  }
-
-  &__info {
+  &__pretitle {
     .fontInter(500);
-    .fontSize(18px, 39px);
+    .fontSize(24px, 39px);
     color: @color[accent];
-    margin: 12px 0 24px;
   }
 
-  &__text {
-    .fontInter(400);
-    .fontSize(clamp(20px, 5vw, 36px), clamp(30px, 5vw, 55px));
-    color: @color[black];
-    max-width: 840px;
+  &__header {
+    padding: clamp(100px, 20vw, 405px) 0 0;
+    width: 100%;
+    background-image: url("../images/page-front/team.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: @border[mainRadius] 0 0 @border[mainRadius];
+    margin: 0 auto;
+  }
 
-    span {
-      display: block;
-      .fontInter(700);
-    }
+  h2 {
+    display: block;
+    .fontInter(900);
+    .fontSize(clamp(20px, 13vw, 155px), clamp(20px, 13vw, 155px));
+    color: @color[white];
+    text-transform: uppercase;
+    margin: 0;
   }
 
   &__list {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: clamp(30px, 5vw, 86px);
     list-style: none;
-    max-height: 53px;
-    margin-top: clamp(20px, 5vw, 40px);
+    margin-top: clamp(20px, 5vw, 55px);
+    padding: 0;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      flex-direction: column;
+    }
+
+    .item__title {
+      .fontInter(400);
+      .fontSize(clamp(20px, 10vw, 115px), clamp(25px, 10vw, 137px));
+      color: @color[black];
+    }
+
+    .item__text {
+      flex: 1 0 auto;
+      .fontInter(400);
+      .fontSize(24px, 29px);
+      color: @color[textSecond];
+      max-width: 282px;
+
+      span {
+        display: block;
+      }
+    }
   }
-  
 }
+
